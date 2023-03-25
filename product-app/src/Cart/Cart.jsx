@@ -1,21 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import CartItem from './Cart/CartItem';
+import { useSelector } from 'react-redux';
+import CartItem from './CartItem';
+import CheckoutForm from './CheckoutForm';
 
-const Review = () => {
-  const store = useSelector(state => state);
+const Cart = () => {
   const cart = useSelector(state => state.cart)
   const cartTotal = useSelector(state => state.cartTotal);
   return (
-    <div>
     <section>
+    <h1 className="sr-only">Checkout</h1>
 
-    <div className="mx-auto grid max-w-screen-2xl grid-cols-1">
+    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 md:grid-cols-2">
       <div className="bg-gray-50 py-12 md:py-24">
         <div className="mx-auto max-w-lg space-y-8 px-4 lg:px-8">
           <div className="flex items-center gap-4">
 
-            <h2 className="font-medium text-gray-900">Items Bought</h2>
+            <h2 className="font-medium text-gray-900">Product App</h2>
           </div>
 
           <div>
@@ -23,9 +23,8 @@ const Review = () => {
             ₹ {cartTotal}
             </p>
 
-            <p className="mt-1 text-sm text-gray-600">You have purchased</p>
+            <p className="mt-1 text-sm text-gray-600">For the purchase of</p>
           </div>
-
 
         { cart.map(cartItem => (
             <div>
@@ -36,22 +35,13 @@ const Review = () => {
               </div>
             </div>
         ))}
-        {
-          <>
-            <p>Name: {store.userInfo.firstName} {store.userInfo.lastName} </p>
-            <p>Email: {store.userInfo.email}</p>
-            <p>Phone Number: {store.userInfo.phoneNumber}</p>
-          </>
-          
 
-        }
         </div>
       </div>
+        <CheckoutForm />
    </div>
 </section>
-
-    </div>
   )
 }
 
-export default Review
+export default Cart
