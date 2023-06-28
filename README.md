@@ -1,6 +1,7 @@
 # ProductPurchaseAndCheckout
 
-Netlify Link - https://sunny-marzipan-1039cb.netlify.app/
+Netlify Link - [App Link](https://sunny-marzipan-1039cb.netlify.app/)
+
 Basic Products App built in react using redux 
 
 Main Page 
